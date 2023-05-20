@@ -1,3 +1,5 @@
+import Input from "@/components/Input.tsx"
+
 const Auth = () => {
     return (
         <div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover ">
@@ -10,6 +12,9 @@ const Auth = () => {
                         <h2 className="text-white text-4x1 mb-8 font-semibold">
                             Sign in
                         </h2>
+                        <div className="flex flex-col gap-4">
+                            <Input />
+                        </div>
                     </div>
                 </div>
             </div>
