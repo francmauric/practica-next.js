@@ -3,6 +3,7 @@ import { BsChevronDown, BsSearch, BsBell } from 'react-icons/bs';
 
 import NavbarItem from '@/components/NavbarItem'
 import MobileMenu from '@/components/MobileMenu'
+import AccountMenu from './AccountMenu'
 
 const Navbar = () => {
 const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -59,7 +60,7 @@ const toggleMobileMenu = useCallback(() => {
                     <img src="/images/default-green.png" alt="" />
                   </div>
                   <BsChevronDown className='text-white transition'/>
-                  
+                  <AccountMenu visible />
                 </div>
              </div>
           </div>

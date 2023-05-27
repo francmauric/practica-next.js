@@ -1,0 +1,89 @@
+[33mcommit b53ccd62f84288d7f1dedae0ebdf527b8532cff2[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Fri May 26 19:44:44 2023 +0200
+
+    navbar mobile
+
+[33mcommit be78962a04739f4fd1ae3da8767982b4b02fb531[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Fri May 26 17:55:13 2023 +0200
+
+    vista del seleccion del perfil listo
+
+[33mcommit f330337ae8ed88762bdf73ff812153b5e9991fa2[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Fri May 26 09:41:20 2023 +0200
+
+    empezando con session
+
+[33mcommit c25802a699a49d9d9917d2aff45c3fd623675aa5[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Thu May 25 18:13:28 2023 +0200
+
+    autenticacion del login con google
+
+[33mcommit b94c786321158e1efb819025d12acc4a42125825[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Thu May 25 13:37:44 2023 +0200
+
+    autenticacion con github
+
+[33mcommit ff8b3438d5361d0f48776000958522667e084148[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Wed May 24 19:43:00 2023 +0200
+
+    instalacion del prismaadapter
+
+[33mcommit 1135b30c59264bbb868bd885259343976d76444c[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Wed May 24 18:12:48 2023 +0200
+
+    conexion del login
+
+[33mcommit 71bee1bafcffcba67128224e3105cff3f58c1f37[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Tue May 23 21:38:15 2023 +0200
+
+    conexion a bd realizada atraves del register
+
+[33mcommit 733f8157139b3ec91b05c875cf9b478bf7d502d9[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Tue May 23 19:56:10 2023 +0200
+
+    completado del register
+
+[33mcommit 6967eef61957a227e71d6640304609d76241be65[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Mon May 22 18:18:30 2023 +0200
+
+    empezando el register
+
+[33mcommit 2690eacd1477dee8c6ae4a5c3ace0552954f9e06[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Mon May 22 16:10:42 2023 +0200
+
+    base de datos creada
+
+[33mcommit dce5428162ad71114fdeeff5df868fdc130e158b[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Sun May 21 22:15:00 2023 +0200
+
+    construccion de db
+
+[33mcommit 31070aa06e3d75c1406a4161e728294b4640f8fe[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Sun May 21 19:28:37 2023 +0200
+
+    creacion de base d datos mongodb
+
+[33mcommit 66f7c1916587f6a3385702722415d2d2fe1e7432[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Sat May 20 15:42:00 2023 +0200
+
+    problema con la importacion de componentes
+
+[33mcommit 9086f9aa5d263ae8669198cb77245c088a8541aa[m
+Author: franc_mauric1 <franc_mauric1@hotmail.com>
+Date:   Fri May 19 21:55:46 2023 +0200
+
+    first commit proyecto creado y empezando el sign in
