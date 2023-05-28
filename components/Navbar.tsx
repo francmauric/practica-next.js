@@ -7,9 +7,14 @@ import AccountMenu from './AccountMenu'
 
 const Navbar = () => {
 const [showMobileMenu, setShowMobileMenu] = useState(false);
+const [showAccountMenu, setShowAccountMenu] = useState(false);
 
 const toggleMobileMenu = useCallback(() => {
   setShowMobileMenu((current) => !current)
+}, []);
+
+const toggleAccountMenu = useCallback(() => {
+  setShowAccountMenu((current) => !current)
 }, []);
 
     return(
@@ -55,12 +60,12 @@ const toggleMobileMenu = useCallback(() => {
                 <div className='text-gray-200 hover:text-gray-300 cursor-pointer transition'>
                   <BsBell />
                 </div>
-                <div className='flex flex-row items-center gap-2 cursor-pointer relative '>
+                <div onClick={toggleAccountMenu} className='flex flex-row items-center gap-2 cursor-pointer relative '>
                   <div className='w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden'>
                     <img src="/images/default-green.png" alt="" />
                   </div>
                   <BsChevronDown className='text-white transition'/>
-                  <AccountMenu visible />
+                  <AccountMenu visible={showAccountMenu} />
                 </div>
              </div>
           </div>
