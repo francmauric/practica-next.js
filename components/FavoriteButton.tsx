@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useCallback, useMemo } from 'react';
-import { AiOutlinePlus } from 'react-icons/ai';
+import { AiOutlinePlus, AiOutlineCheck } from 'react-icons/ai';
 
 import useCurrentUser from '@/hooks/useCurrentUser';
 import useFavorites from '@/hooks/useFavorites';
@@ -10,8 +10,40 @@ interface FavoriteButtonProps {
 }
 
 const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
+    const { mutate: mutateFavorites } = useFavorites();
+    const { data: currentUser, mutate } = useCurrentUser();
+
+    const isFavorite = useMemo(() => {
+        const list = currentUser?.favoriteIds || [];
+
+        return list.includes(movieId);
+    },[currentUser, movieId])
+    
+    const toggleFavorites = useCallback(async () => {
+        let response;
+
+        if (isFavorite) {
+            response = await axios.delete('/api/favorite', { data: { movieId } });
+        } else {
+            response = await axios.post('/api/favorite', { movieId });
+        }
+
+        const updatedFavoriteIds = response?.data?.favoriteIds;
+
+        mutate({
+            ...currentUser,
+            favoriteIds: updatedFavoriteIds
+        })
+
+        mutateFavorites();
+    },[movieId, isFavorite, currentUser, mutate, mutateFavorites])
+
+    const Icon = isFavorite ? AiOutlineCheck : AiOutlinePlus;
+
     return (
-        <div className='
+        <div 
+            onClick={toggleFavorites}
+        className='
             cursor-pointer
             group/item
             w-6
@@ -27,7 +59,7 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
             transition
             hover:border-natural-300
         '>
-            <AiOutlinePlus  className='text-white' size={25}/>
+            <Icon  className='text-white' size={25}/>
         </div>
     )
 }
