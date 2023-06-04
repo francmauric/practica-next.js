@@ -6,7 +6,7 @@ import Billboard from '@/components/Billboard'
 import MovieList from '@/components/MovieList'
 
 import useMoviesList from '@/hooks/useMoviesList'
-import useCurrentUser from '@/hooks/useCurrentUser'
+/* import useCurrentUser from '@/hooks/useCurrentUser' */
 import useFavorites from '@/hooks/useFavorites'
 
 export async function getServerSideProps(context: NextPageContext){
