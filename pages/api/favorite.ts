@@ -39,6 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(200).json(user);
         }   
 
+        console.log('llega al delete')
         if (req.method === 'DELETE') {
             const { currentUser } = await serverAuth(req, res);
 
