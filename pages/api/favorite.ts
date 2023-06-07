@@ -6,6 +6,7 @@ import serverAuth from '@/libs/serverAuth'
 console.log('llega por delete')
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     console.log('llega aqui')
+    console.log(req.method)
     
     try {
         if (req.method === 'POST') {
@@ -38,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(200).json(user);
         }   
 
-        if (req.method === 'DELETE') {
+        if (req.method !== 'POST') {
             console.log('llega al delete del if')
             const { currentUser } = await serverAuth(req, res);
 
