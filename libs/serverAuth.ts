@@ -17,6 +17,7 @@ const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
     }
   });
   
+  
   if (!currentUser) {
     throw new Error('Not signed in');
   }

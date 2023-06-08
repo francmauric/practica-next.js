@@ -2,6 +2,7 @@ import useSwr from 'swr';
 import fetcher from '@/libs/fetcher';
 
 const useFavorites = () => {
+    
     const {
         data,
         error,
@@ -12,6 +13,7 @@ const useFavorites = () => {
         revalidateOnFocus: false,
         revalidateOnReconnect: false,
     });
+    
 
     return {
         data,
