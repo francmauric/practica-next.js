@@ -4,9 +4,12 @@ import prismadb from '@/libs/prismadb';
 import { getServerSession } from "next-auth";
 import { without } from "lodash";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
+
+console.log('llega unfavorite')
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   
-  console.log('llega unfavorite')
+  console.log('llega unfavorite 2')
+  
   try {
     if (req.method !== 'POST') {
       console.log('llega aqui')

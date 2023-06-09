@@ -5,11 +5,13 @@ import { AiOutlinePlus, AiOutlineCheck } from 'react-icons/ai';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import useFavorites from '@/hooks/useFavorites';
 
+import { NextApiRequest, NextApiResponse } from "next";
+
 interface FavoriteButtonProps {
     movieId: string
 }
 
-const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
+const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }, req:NextApiRequest) => {
     const { mutate: mutateFavorites } = useFavorites();
     const { data: currentUser, mutate } = useCurrentUser();
     
@@ -23,9 +25,9 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
         let response;
         
         if (isFavorite) {
-            console.log('delet')
+            console.log(req.method)
             
-            response = await axios.delete('/api/favorite', { data: { movieId } });
+            response = await axios.delete('/api/unfavorite', { data: { movieId } });
             
         } else {
             console.log('post')
