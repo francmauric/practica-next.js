@@ -44,8 +44,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             console.log('llega al delete del if')
             const { currentUser } = await serverAuth(req, res);
 
-            const { movieId } = req.query;
+            /* const movieId = req.query['movieId']; */
             
+            //solucion del problema que recibe un array de string
+            const movieId = Array.isArray(req.query['movieId']) ? req.query['movieId'][0] : req.query['movieId'];
+
             const existingMovie = await prismadb.movie.findUnique({
                 where: {
                     id: movieId,
