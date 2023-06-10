@@ -59,7 +59,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             throw new Error('Invalid ID')
          }   
 
-          const updatedFavoriteIds = without(currentUser.favoriteIds, movieId);
+          /* const updatedFavoriteIds = without(currentUser.favoriteIds, movieId); */
+          //UTILIZO METODO FILTER EN LUGAR DEL WITHOUT PARA ARREGLAR PROBLEMA DE TYPESCRIPT
+          const updatedFavoriteIds = currentUser.favoriteIds.filter(id => id !== movieId);
 
           const updateUser = await prismadb.user.update({
             
