@@ -5,13 +5,15 @@ import { getServerSession } from "next-auth";
 import { without } from "lodash";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
+
+
 console.log('llega unfavorite')
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  
+  const {movieId} = req.query;
   console.log('llega unfavorite 2')
-  
+  console.log(movieId)
   try {
-    if (req.method !== 'POST') {
+    if (req.method !== 'DELETE') {
       console.log('llega aqui')
       return res.status(405).end();
     }

@@ -5,13 +5,12 @@ import { AiOutlinePlus, AiOutlineCheck } from 'react-icons/ai';
 import useCurrentUser from '@/hooks/useCurrentUser';
 import useFavorites from '@/hooks/useFavorites';
 
-import { NextApiRequest, NextApiResponse } from "next";
 
 interface FavoriteButtonProps {
     movieId: string
 }
 
-const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }, req:NextApiRequest) => {
+const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }) => {
     const { mutate: mutateFavorites } = useFavorites();
     const { data: currentUser, mutate } = useCurrentUser();
     
@@ -20,20 +19,18 @@ const FavoriteButton: React.FC<FavoriteButtonProps> = ({ movieId }, req:NextApiR
         /* console.log(list) */
         return list.includes(movieId);
     },[currentUser, movieId])
-    
+
     const toggleFavorites = useCallback(async () => {
         let response;
         
         if (isFavorite) {
-            console.log(req.method)
-            
-            response = await axios.delete('/api/unfavorite', { data: { movieId } });
-            
+
+            response = await axios.delete(`/api/favorite?movieId=${movieId}`)
+            console.log(response.config.method)       
         } else {
-            console.log('post')
             response = await axios.post('/api/favorite', { movieId });
         }
-
+        console.log(response.config.method)
         const updatedFavoriteIds = response?.data?.favoriteIds;
 
         mutate({

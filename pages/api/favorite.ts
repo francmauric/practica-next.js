@@ -4,17 +4,18 @@ import { without } from 'lodash';
 import prismadb from '@/libs/prismadb';
 import serverAuth from '@/libs/serverAuth'
 console.log('llega por delete')
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     console.log('llega aqui')
-    console.log(req.method)
+    
     
     try {
         if (req.method === 'POST') {
-            
+            console.log(req.method)
             const { currentUser } = await serverAuth(req, res);
             
             const { movieId } = req.body;
-         
+            
             const existingMovie = await prismadb.movie.findUnique({
                 where: {
                     id: movieId,
@@ -43,8 +44,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             console.log('llega al delete del if')
             const { currentUser } = await serverAuth(req, res);
 
-            const { movieId } = req.body;
-
+            const { movieId } = req.query;
+            
             const existingMovie = await prismadb.movie.findUnique({
                 where: {
                     id: movieId,
